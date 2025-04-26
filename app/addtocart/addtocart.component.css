@@ -1,0 +1,21 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  
+  .bill {
+    margin-top: 20px;
+    font-weight: bold;
+    color: green;
+  }
+  .cart-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+  }

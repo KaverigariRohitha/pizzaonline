@@ -1,0 +1,17 @@
+<p>order works!</p>
+
+<div class="text-center mt-5">
+<h1>Pizza Details</h1>
+<img src="{{image}}" style="width:400px;height:400px" class="rounded mb-3 mt-3">
+<div><b>Id : </b>{{pid}}</div>
+<div><b>Toppings : </b>{{toppings}}</div>
+<div><b>Sauce : </b>{{sauce}}</div>
+<div><b>Size : </b>{{size}}</div>
+<div><b>Features : </b>{{features}}</div>
+<div><b>Price : </b>{{price | currency:"INR"}}</div><br>
+<label><b>Enter Quantity:</b></label><input type="number" [(ngModel)] = "q" placeholder="Enter Quantity" class="form-control text-center mt-3 mb-3" style="width: 200px; margin:0 auto">
+<p style="border:1px solid rgb(112, 105, 105);width:200px; margin:0 auto" class="form-control"><b>Total Price :</b> {{q*price | currency:'INR'}}</p>
+<br>
+<button class="bg-success text-white" (click)="confirmbuy()">confirm buy</button>
+</div>
+

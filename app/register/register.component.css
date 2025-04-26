@@ -1,0 +1,14 @@
+/* .c2{
+    background-color: white;
+}
+.c2{
+    background-color: black;
+} */
+.container {
+    background: #ba529d81;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}

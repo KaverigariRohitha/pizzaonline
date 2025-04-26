@@ -1,0 +1,37 @@
+
+<html>
+
+    <body>
+      <div class="login-container">
+        <label class="mt-5">Select Theme</label>
+      <!-- <select  (change)="onThemeChange($event)" class="form-select" style="width: 200px;">
+        <option>Select</option>
+        <option class="c1">Light Theme</option>
+        <option class="c2">Dark Theme</option>
+      </select> -->
+      <div class="container">
+        <h1 class="text-center" style="color:rgb(219, 35, 164); margin-top: 40px;">Login Form</h1>
+        <div style="width:300px; margin:0 auto;margin-top:50px;" class="d-flex justify-content-center align-items-center">
+           <form [formGroup]="f">
+            <label><b>Enter Username</b></label>
+            <input type="text" formControlName="uname" class="form-control">
+            <div class="name text-danger" *ngIf="f.controls.uname.errors?.required && f.controls.uname.touched">Please Enter Username</div>
+            <div class="name text-danger" *ngIf="f.controls.uname.errors?.pattern && f.controls.uname.touched">Please check pattern</div>
+            
+            <label><b>Enter Email</b></label>
+            <input type="email" formControlName="email" class="form-control">
+            <div class="name text-danger" *ngIf="f.controls.email.errors?.required && f.controls.email.touched">Please Enter Email</div>
+            <div class="name text-danger" *ngIf="f.controls.email.errors?.pattern && f.controls.email.touched">Please check Email</div>
+
+            <label><b>Enter Password</b></label>
+            <input type="password" formControlName="pass" class="form-control">
+            <div class="name text-danger" *ngIf="f.controls.pass.errors?.required && f.controls.pass.touched">Please Enter Password</div>
+            <div class="name text-danger" *ngIf="f.controls.pass.errors?.pattern && f.controls.pass.touched">Please check password</div><br>
+            <input (click)="validateLogin()" type="submit" value="Submit" class="btn btn-success">
+
+        </form>
+     </div>
+      </div>
+      </div>
+ </body>
+</html>

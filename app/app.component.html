@@ -1,0 +1,18 @@
+<body>
+  <nav class="navbar  fixed-top" style="background-color: mediumslateblue;">
+  <a routerLink="/home"  class="nav-brand text-white nav-link" >  <img src="https://www.bing.com/th/id/OIP.csbDHXsm5Vu9fahy2Py98wHaHa?w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" >Home
+    
+    
+  </a>
+  <ul class="nav">
+  <li><a routerLink="/login" *ngIf = "!isLoggedIn()" class="nav-link text-white">Login</a></li>
+  <li><a routerLink="/register" class="nav-link text-white">Register</a></li>
+  <li><a routerLink="/view" class="nav-link text-white">View</a></li>
+  <li><a routerLink="/order" class="nav-link text-white">Order</a></li>
+  <li><a routerLink="/addtocart" class="nav-link text-white"><i class="fa-solid fa-cart-shopping"></i></a></li>
+  <li><a (click)="logout()" routerLink="/logout" class="nav-link text-white" *ngIf="isLoggedIn()">Logout</a></li>
+  </ul>
+  </nav>
+  <router-outlet></router-outlet>
+  </body>
+  

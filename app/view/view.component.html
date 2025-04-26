@@ -1,0 +1,30 @@
+<p>view works!</p>
+<div class="container mt-4">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+      class="form-control mb-4"
+      placeholder="Search for pizzas"
+    />
+<div class="row" style="margin-left:20px; margin-top: 60px;">
+    <div class="col-md-4" *ngFor="let i of pizzaarray">
+        <div class="card" style="width: 500px;">
+            <div class="card-body">
+            <div class="card-header">
+        <div><img src="{{i.image}}" style="height: 250px; width:250px;margin-top: 40px;"></div> </div>
+        <div><b>Id : </b>{{i.id}}</div>
+        <div><b>Toppings : </b>{{i.toppings}}</div>
+        <div><b>name: </b>{{i.name}}</div>
+        <div><b>Sauce : </b>{{i.sauce}}</div>
+        <div><b>Size : </b>{{i.size}}</div>
+        <div><b>Features : </b>{{i.Features}}</div>
+        <div><b>Price : </b>{{i.price}}</div>
+        <div class="card-footer">
+        <button routerLink="/order" [queryParams]="{a:i.id,b:i.toppings,c:i.sauce,d:i.size,e:i.Features,f:i.price,g:i.image,h:i.name}" class="btn btn-danger form-control mb-2 me-2" style="width: 200px;">Order Now</button>
+    
+        <button (click)="getitem(i)" routerLink="/addtocart" class="btn btn-danger form-control mb-2" style="width: 200px;">Add to Cart</button>
+    </div>
+            </div>
+    </div>
+</div>

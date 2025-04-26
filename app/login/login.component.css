@@ -1,0 +1,15 @@
+.container {
+    background: transparent;
+    padding : 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(87, 196, 132, 0.1);
+    /* width: 100%; */
+    max-width: 400px;
+}
+input,select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

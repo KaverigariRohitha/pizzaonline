@@ -1,0 +1,46 @@
+
+<html>
+    <body>
+      <div class="container">
+        <h1 class="text-center" style="color:rgb(217, 12, 224); margin-top: 80px;">Registration Form</h1>
+        <div style="width:300px; margin:0 auto;margin-top:50px;" class="d-flex justify-content-center align-items-center">
+           <form [formGroup]="f">
+            <label><b>Enter Username</b></label>
+            <input type="text" formControlName="uname" class="form-control">
+            <div class="name text-danger" *ngIf="f.controls.uname.errors?.required && f.controls.uname.touched">Please Enter Username</div>
+            <div class="name text-danger" *ngIf="f.controls.uname.errors?.pattern && f.controls.uname.touched">Please check pattern</div>
+            
+            <label><b>Enter Email</b></label>
+            <input type="email" formControlName="email" class="form-control">
+            <div class="name text-danger" *ngIf="f.controls.email.errors?.required && f.controls.email.touched">Please Enter Email</div>
+            <div class="name text-danger" *ngIf="f.controls.email.errors?.pattern && f.controls.email.touched">Please check Email</div>
+
+            <label><b>Enter Password</b></label>
+            <input type="password" formControlName="pass" class="form-control">
+            <div class="name text-danger" *ngIf="f.controls.pass.errors?.required && f.controls.pass.touched">Please Enter Password</div>
+            <div class="name text-danger" *ngIf="f.controls.pass.errors?.pattern && f.controls.pass.touched">Please check password</div>
+
+            <label><b>Confirm Password</b></label>
+            <input type="password" formControlName="cpass" class="form-control">
+            <div class="name text-danger" *ngIf="f.controls.cpass.errors?.required && f.controls.cpass.touched">Please Enter Password</div>
+            <div class="name text-danger" *ngIf="f.errors?.mismatch && f.touched">
+                Passwords do not match!
+              </div>
+            <label class="me-3"><b>Gender</b></label>
+            <input type="radio" formControlName="gender" value="male" ><label class="me-3"><b>Male</b></label>
+            <input type="radio" formControlName="gender" value="female"><label><b>Female</b></label><br>
+            <div class="name text-danger" *ngIf="f.controls.gender.errors?.required && f.controls.gender.touched">Please select gender</div><br>
+            <label><b>Select Country: </b></label><span class="me-3"></span>
+            <select formControlName="country">
+              <option value="" disabled selected> Select a country</option> <!-- Default option -->
+              <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
+            </select><br>
+            <br>
+            <input (click)="onsubmit()" type="submit" value="Register"  [disabled]="f.invalid" class="btn btn-success">
+ 
+
+           </form>
+        </div>
+      </div>
+    </body>
+</html>

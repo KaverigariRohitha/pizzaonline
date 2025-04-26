@@ -1,0 +1,26 @@
+<body>
+    
+<div class="bg-image">
+    <h1 class="text-center text-dark p-5 m-5"><b>Welcome to Pizza House</b></h1>
+    <div >
+        <div class="container mt-4">
+            <label for="themeSelector" class="form-label">Select Theme:</label>
+            <select
+              id="themeSelector"
+              class="form-select"
+              (change)="changeTheme($event)"
+            >
+              <option *ngFor="let theme of themes" [value]="theme.class">
+                {{ theme.name }}
+              </option>
+            </select>
+          </div>
+        <div class="text-center"><p style="font-size: 30px; font-weight: bold; color:rgb(230, 17, 98);">New User! please Register</p>
+             <button routerLink="/register" class="bg bg-info form-control fw-bold" style="margin:0 auto;width: auto;">Register</button>
+        </div>
+        <div class="text-center"><p style="font-size: 30px; font-weight: bold; color:rgb(230, 17, 98);">Already Registered! Please Login</p>
+              <button routerLink="/login" class="bg bg-info form-control fw-bold" style="margin:0 auto;width: auto;">Login</button>
+        </div>
+    </div>
+</div>
+</body>
